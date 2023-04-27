@@ -27,7 +27,7 @@ T = M − V
 
 
 ### Common Mistakes/Stolpersteine
-
+- Ohne Internetzugang ist RNBO schwer bis gar nicht zu gebrauchen; bei langsamem Internetzugang hängt Max regelmäßig
 
 
 ### Offene Fragen
