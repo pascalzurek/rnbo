@@ -17,7 +17,12 @@ Latenz?
 
 ### Patch 1: MHV zu Doppel MS
 
-
+Horizontal (wie MS):
+L = M+H 
+R = M−H 
+Vertikal:
+B = M + V 
+T = M − V
 
 
 
