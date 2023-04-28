@@ -36,9 +36,10 @@ T = M − V
 ### Common Mistakes/Stolpersteine
 - Ohne Internetzugang ist RNBO schwer bis gar nicht zu gebrauchen; bei langsamem Internetzugang hängt Max regelmäßig
 - (DNS-Sperre aus Hotels?!)
+- Vor Recompile auf jeden Fall das VST in der DAW unloaden. Danach dran denken, dass man einen Neuscan des VST-Ordners machen muss. (Gibt es einen schnelleren Weg? Gibt es einen "einfacheren" VST-Host, damit man nicht immer eine "große" DAW manövrieren muss?)
 
 ### Offene Fragen
-- Gibt es Text-Ausgabemöglichkeiten in die UI (z. B. der VST)?  
+- Gibt es Text-Ausgabemöglichkeiten in die UI (z. B. in der VST)?  
 - Was ist die best practice zum debuggen in der DAW?  
 - Was genau kompiliert "Auto Compile"?!  
 - Wie viel kann man ohne Internetzugang erreichen?  
