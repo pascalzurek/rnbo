@@ -10,13 +10,13 @@ https://rnbo.cycling74.com/
   
   
 ## Was teste ich?  
-Raspberry Pi (welcher geht?)   
-VST auf allen Plattformen  
-Speed?  
-Web App  
-Gen in dem Objekt?  
-Latenz?  
-(Max External)  
+- Raspberry Pi (welcher geht?)   
+- VST, auf allen Plattformen  
+- Speed?/Latenz?    
+- Web App?
+- Gen in dem Objekt?  
+- Latenz?  
+- (Irgendwas besonderes, wenn man daraus eine Max External baut?)  
   
 ### Patch 0: "Fingerübung" Stereo Widener in MS  
   
