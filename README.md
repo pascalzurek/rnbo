@@ -1,6 +1,6 @@
 # rnbo  
 
-## Grundsätzliche Ressource:  
+## Grundsätzliche Ressourcen:  
 https://rnbo.cycling74.com/  
   
 ## Installation  
@@ -28,7 +28,9 @@ R = M − H
 Vertikal:  
 B = M + V   
 T = M − V  
-  
+- Im Patch ist (zum Testen) auswählbar, ob man auf Kanal 1+2 das L/R- oder das B/T-Signal haben will. (Auf Kanal 3/4 ist immer das B/T-Signal.)
+- Das VST nimmt dB als Werte entgegen, dazu den "enum"-Auswähler für LR/BT-Wahl.
+
   
   
 ### Common Mistakes/Stolpersteine
