@@ -10,7 +10,7 @@ https://rnbo.cycling74.com/
   
   
 ## Was teste ich?  
-Raspberry Pi (welcher geht?)  
+Raspberry Pi (welcher geht?)   
 VST auf allen Plattformen  
 Speed?  
 Web App  
@@ -33,13 +33,13 @@ T = M − V
   
 ### Common Mistakes/Stolpersteine
 - Ohne Internetzugang ist RNBO schwer bis gar nicht zu gebrauchen; bei langsamem Internetzugang hängt Max regelmäßig
-- DNS-Sperre aus Hotels?!
+- (DNS-Sperre aus Hotels?!)
 
 ### Offene Fragen
-Gibt es Ausgabemöglichkeiten in die UI (z. B. der VST)?
-Was ist die best practice zum debuggen in der DAW?
-Was genau kompiliert "Auto Compile"?
-Wie viel kann man ohne Internetzugang erreichen?
+- Gibt es Text-Ausgabemöglichkeiten in die UI (z. B. der VST)?  
+- Was ist die best practice zum debuggen in der DAW?  
+- Was genau kompiliert "Auto Compile"?!  
+- Wie viel kann man ohne Internetzugang erreichen?  
 
 
 ### UI/JUCE
