@@ -2,6 +2,7 @@
 
 ## Grundsätzliche Ressourcen:  
 https://rnbo.cycling74.com/  
+https://docs.cycling74.com/max8/vignettes/rnbo_resources (Synth Building Blocks und RNBO Pedals)
   
 ## Installation  
 (genaueres: ToDo)  
@@ -52,3 +53,18 @@ https://github.com/Cycling74/rnbo.example.juce
 https://github.com/Cycling74/rnbo.example.juce/blob/main/CUSTOM_UI.md
 
 Fazit: Viel Voraussetzungen, um das bauen zu können. ProJucer kann man sich sicherlich dennoch mal anschauen.
+
+
+### RasPi
+- Geht laut Cycling nur auf RasPi 3 und 4  
+- Guter Überblick und Startpunkt: https://rnbo.cycling74.com/learn/raspberry-pi-target-overview
+- Bester Anfang: Raspberry Pi Imager downloaden (ToDo: Link) und RNBO-Image drauf ziehen
+- Image: https://rnbo.cycling74.com/resources#raspberry-pi-images
+- Interface benötigt, z. B. das übliche Billo-Behringer oder ein USB-Mikro, das class compatible ist.
+- rnbo.remote ist sicher der wichtigste Ausgangspunkt
+- Absolut schönstes Feature, direkt out of the box: 
+-- Web-Interface zum Einstellen der Parameter
+-- Auch am Handy bedienbar (QR-Code mit URL ist direkt dabei)
+- Fallstricke:
+-- Der Username muss "pi" bleiben! https://rnbo.cycling74.com/learn/working-with-the-raspberry-pi-target
+-- /usr/bin/rnbooscquery muss laufen
