@@ -67,6 +67,7 @@ Fazit: Viel Voraussetzungen, um das bauen zu können. ProJucer kann man sich sic
 -- Auch am Handy bedienbar (QR-Code mit URL ist direkt dabei)
 - Grundlegendes Setup, falls noch nichts klappt: http://ip_address:port/rnbo/inst/0 - gibt's nicht, veraltete Doku?
 - https://rnbo.cycling74.com/learn/configuring-audio-on-the-raspberry-pi - Da sollte eigentlich ein entsprecheder Audio-Config-Button sein, der kommt aber nicht.
+- "The RNBO Runner exposes an OSC-based interface to JACK, which you can use to select your active soundcard, choose a sample rate, and restart JACK. You can use this OSC interface directly, but it's often easier to use the special audio configuration Max patch included with the RNBO package."
 - 
 - Fallstricke:
 -- Der Username muss "pi" bleiben! https://rnbo.cycling74.com/learn/working-with-the-raspberry-pi-target
