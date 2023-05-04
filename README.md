@@ -65,6 +65,9 @@ Fazit: Viel Voraussetzungen, um das bauen zu können. ProJucer kann man sich sic
 - Absolut schönstes Feature, direkt out of the box: 
 -- Web-Interface zum Einstellen der Parameter
 -- Auch am Handy bedienbar (QR-Code mit URL ist direkt dabei)
+- Grundlegendes Setup, falls noch nichts klappt: http://ip_address:port/rnbo/inst/0 - gibt's nicht, veraltete Doku?
+- https://rnbo.cycling74.com/learn/configuring-audio-on-the-raspberry-pi - Da sollte eigentlich ein entsprecheder Audio-Config-Button sein, der kommt aber nicht.
+- 
 - Fallstricke:
 -- Der Username muss "pi" bleiben! https://rnbo.cycling74.com/learn/working-with-the-raspberry-pi-target
 -- /usr/bin/rnbooscquery muss laufen
