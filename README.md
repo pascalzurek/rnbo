@@ -51,3 +51,4 @@ https://github.com/Cycling74/rnbo.example.juce
 
 https://github.com/Cycling74/rnbo.example.juce/blob/main/CUSTOM_UI.md
 
+Fazit: Viel Voraussetzungen, um das bauen zu können. ProJucer kann man sich sicherlich dennoch mal anschauen.
