@@ -141,6 +141,16 @@ Fazit: Viel Voraussetzungen, um das bauen zu können. ProJucer kann man sich sic
 -- Debuggen: /usr/bin/rnbooscquery muss laufen
 - Wo liegen die Dateien eigentlich?
 
+#### Potis etc. einbauen
+- Das geht am einfachsten, indem man in Python ein Script schreibt, das die GPIOs ausliest und OSC-Nachrichten baut. 
+- Beispiel mit gpiozero und liblo (OSC-Sende-Package)
+- https://www.youtube.com/watch?v=LVrVWhJBOL4
+-- Nötig dafür: "sudo apt install liblo-dev" und "pip install pyliblo3"
+
+### LCD-Displays und Encoder
+- Anleitung: https://www.youtube.com/watch?v=TZ-4zqEvpgo
+
+
 ### Plugins auf Webpages: (ungetestet) 
 - HowTo: https://www.youtube.com/watch?v=Q3S3BD1LnCY
 - Quelle für das "drumrum": https://github.com/Cycling74/rnbo.example.webpage
