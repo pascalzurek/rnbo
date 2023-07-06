@@ -24,6 +24,7 @@ https://docs.cycling74.com/max8/vignettes/rnbo_resources (Synth Building Blocks 
   - Wenn ich Presets brauche; die gehen zwar, aber nur über Snapshots
   - während des Entwickelns eines großen Patches (Kompilierzeiten skalieren schlecht)
   - zum Ausprobieren von neuer, unbekannter Hardware (keine Debug-Ausgaben, d. h. schon die CC-Ausgabe eine MIDI-Controllers kann ich nicht sichtbar machen)
+  - Wenn man VSTs programmieren will, aber keinen Internetzugang hat (kann ja vorkommen)
 
 
 ### Patch 0: "Fingerübung" Stereo Widener in MS  
@@ -95,7 +96,8 @@ Achtung: Das hier ist bewusst eine lose Sammlung an Stolpersteinen ohne Ordnung.
 - Was ist die best practice zum debuggen in der DAW?
   - Erst das Plugin 100% fertig machen, dann in die DAW exportieren.
 - Wie viel kann man ohne Internetzugang erreichen?
-  - Fast gar nichts. Schon beim Starten verbindet sich Max mit dem RNBO-Server, und wenn das nicht klappt, wird die Arbeit nichts.
+  - Beim VST-Programmieren: fast gar nichts. Schon beim Starten verbindet sich Max mit dem RNBO-Server, und wenn das nicht klappt, wird die Arbeit nichts.
+  - Beim RasPi-Programmieren: Alles in Ordnung, denn der Code wird auf dem Pi kompiliert.
 - Ist das nur bei mir so, oder ist Max auf einmal langsam und stürzt oft ab?
   - Du bist nicht alleine.
 
