@@ -40,7 +40,7 @@ B = M + V, T = M − V
 
  
   
-### Common Mistakes/Stolpersteine/Dinge, die anders sind als erwartet
+## Common Mistakes/Stolpersteine/Dinge, die anders sind als erwartet
 Achtung: Das hier ist bewusst eine lose Sammlung an Stolpersteinen ohne Ordnung.
 - Ohne Internetzugang ist RNBO schwer bis gar nicht zu gebrauchen; bei langsamem Internetzugang hängt Max regelmäßig
 - (DNS-Sperre aus Hotels?!)
@@ -63,17 +63,18 @@ Achtung: Das hier ist bewusst eine lose Sammlung an Stolpersteinen ohne Ordnung.
   - Weiteres: https://rnbo.cycling74.com/learn/intro-to-sample-accurate-patching
 - Immer wieder: Man muss sich WIRKLICH daran gewöhnen, dass alles länger braucht.
 
-### Messages and Ports
+## Messages und Ports
 - https://rnbo.cycling74.com/learn/messages-and-ports
 - Man muss sich erstmal dran gewöhnen, wie RNBO Nachrichten empfängt und sendet: Die in~ und inport~-Eingänge muss man sich genau angucken und schauen, welches Scope sie jeweils haben.
 - Wichtiger Denkfehler hier: Für das Prototyping auf einem normalen Computer strickt man einen normalen Max-Patch mit ezdac~, ezadc~ usw. um ein RNBO-Objekt. All das fliegt aber raus, wenn man das RNBO-Objekt dann kompiliert und an die entsprechende Stelle (z. B. auf den RasPi) bringt. Man muss also immer genau überlegen, welche Infrastruktur in den RNBO-Patcher soll und welche Infrastruktur außenrum gebraucht wird.
-- Die Nachrichten, die ich über die Ports kriege, kann ich bearbeiten:
+- Die Nachrichten, die ich über die Ports in RNBO hineinbringe, kann ich bearbeiten:
   - @fromnormalized expression => linear scaling
   - Für das RasPi-Webinterface ist noch @displayorder interessant
-  - @max, @min, @enum sind auch offensichtlich wichtige Parameter 
+  - @max, @min, @enum sind auch offensichtlich wichtige Parameter
+- Der Outport ist die einzige Debug-Möglichkeit. Man kann dann mit "rnbo.remote ipadresse" aus dem linken Inlet die Nachrichten empfangen. Wenn der Outport z. B. "eingangskanal" heißt, kann ich links an rnbo.remote ein "route eingangskanal" und ein "print" hängen und mir das auf meiner lokalen Konsole ausgeben lassen.
 
 
-### MIDI und OSC
+## MIDI und OSC
 - midiin und ctlin sind die Blöcke, die wir brauchen.
   - ACHTUNG. Wenn man im Max-Patcher draußen herum kein midiin hat, funktioniert beim Prototyping das midiin im RNBO-Subpatcher auch nicht.
   - Dem midiin im Hauptpatcher gibt man von midiinfo (message: Controller) das richtige control device.
@@ -85,23 +86,29 @@ Achtung: Das hier ist bewusst eine lose Sammlung an Stolpersteinen ohne Ordnung.
   - ...und sendet sie via "udpsend ipaddr 1234" an die OSC-Adresse. Das war's schon.
 
 
-### FAQ
+## FAQ
 - Gibt es Text-Ausgabemöglichkeiten in die UI (z. B. in der VST)?
-  - Nein. Es gibt praktisch keine Ausgabemöglichkeiten außer dem "outport", der eigentlich Ausgaben ins Webinterface schreiben soll, wenn man z. B. auf den RasPi exportiert. (Funktioniert aber auch nicht.) Debuggen ist damit sehr, sehr schwer.
+  - Nein. Es gibt praktisch keine Ausgabemöglichkeiten außer dem "outport", der eigentlich Ausgaben ins Webinterface schreiben soll, wenn man z. B. auf den RasPi exportiert. (Funktioniert aber dort nicht.)
+  - Debuggen ist damit sehr, sehr schwer.
+  - Der Outport ist die einzige Debug-Möglichkeit. Man kann sich dann lokal einen Max-Patch bauen, dort mit "rnbo.remote ipadresse" aus dem linken Inlet die Nachrichten empfangen.
+    - Wenn der Outport z. B. "eingangskanal" heißt, kann ich links an rnbo.remote ein "route eingangskanal" und ein "print" hängen und mir das auf meiner lokalen Konsole ausgeben lassen.
 - Was ist die best practice zum debuggen in der DAW?
-  - Erst das Plugin 100% fertig machen, dann in die DAW exportieren  
+  - Erst das Plugin 100% fertig machen, dann in die DAW exportieren.
 - Wie viel kann man ohne Internetzugang erreichen?
-  - Fast gar nichts. Schon beim Starten verbindet sich Max mit dem RNBO-Server, und wenn das nicht klappt, wird die Arbeit nichts.  
+  - Fast gar nichts. Schon beim Starten verbindet sich Max mit dem RNBO-Server, und wenn das nicht klappt, wird die Arbeit nichts.
+- Ist das nur bei mir so, oder ist Max auf einmal langsam und stürzt oft ab?
+  - Du bist nicht alleine.
 
 
-### UI/JUCE
+## UI/JUCE
 - Die UI für ein VST-Plugin muss man mit JUCE bauen. Das ist nicht ganz trivial. Infos hier:
   - https://github.com/Cycling74/rnbo.example.juce
   - https://github.com/Cycling74/rnbo.example.juce/blob/main/CUSTOM_UI.md
   - Fazit: Viel Voraussetzungen, um das bauen zu können. ProJucer kann man sich sicherlich dennoch mal anschauen.
 
 
-### RasPi
+## RasPi
+### Installation & erste Schritte
 - Geht laut Cycling nur auf RasPi 3 und 4  
 - Audio-Interface benötigt, z. B. das übliche Billo-Behringer UCA oder ein USB-Mikro, das class compatible ist. (Das interne Audio-Interface ist als Standard disabled.)
 - Guter Überblick und Startpunkt: https://rnbo.cycling74.com/learn/raspberry-pi-target-overview
@@ -117,18 +124,18 @@ Achtung: Das hier ist bewusst eine lose Sammlung an Stolpersteinen ohne Ordnung.
 - https://rnbo.cycling74.com/learn/configuring-audio-on-the-raspberry-pi - Veraltete Doku: Da sollte eigentlich ein entsprecheder Audio-Config-Button sein, der kommt aber nicht mehr (Stand Max 8.5.x). Abhilfe schafft:
   - Das meiste ist jetzt direkt rechts beim Export einstellbar (Samplerate, Audiointerface, Vektorgröße)
   - Das nicht verlinkte Script rpi-configure-audio hilft auch sehr. Liegt bei Windows in "C:\Program Files\Cycling '74\Max 8\resources\packages\RNBO\examples\Utilities\rpi-configure-audio\patchers\rpi-configure-audio.maxpat"
-
   - Abhilfe schafft außerdem: https://rnbo.cycling74.com/learn/configuring-audio-on-the-raspberry-pi#using-the-osc-interface 
   - Man kann z. B. via OSC alles einstellen; https://github.com/yoggy/sendosc machts möglich (sendosc c74rpi.local 5678 /rnbo/jack/config/card s hw:0)
   - "The RNBO Runner exposes an OSC-based interface to JACK, which you can use to select your active soundcard, choose a sample rate, and restart JACK. You can use this OSC interface directly, but it's often easier to use the special audio configuration Max patch included with the RNBO package."
 
-- Fallstricke:
+### Fallstricke
   - Der Username muss "pi" bleiben! https://rnbo.cycling74.com/learn/working-with-the-raspberry-pi-target
-  - Debuggen: /usr/bin/rnbooscquery muss laufen
-- Wo liegen die Dateien eigentlich? In /home/pi/documents/rnbo. Den Ordner sollte man backuppen.
+  - /usr/bin/rnbooscquery muss laufen (per SSH und htop nachsehen)
+- Wo liegen die Dateien eigentlich?
+  - In /home/pi/documents/rnbo. Den Ordner sollte man backuppen.
   - Nice to know: Das Kompilieren findet dann nativ auf dem RasPi statt, d. h. man sollte dafür sorgen, dass auf dem RasPi keine Last ist, wenn man schnell exporten will.
 
-#### Potis etc. einbauen
+### Potis und andere GPIO-Dinge etc. einbauen
 - Das geht am einfachsten, indem man in Python ein Script schreibt, das die GPIOs ausliest und OSC-Nachrichten baut. 
 - Beispiel mit gpiozero und liblo (OSC-Sende-Package)
 - https://www.youtube.com/watch?v=LVrVWhJBOL4
@@ -138,7 +145,7 @@ Achtung: Das hier ist bewusst eine lose Sammlung an Stolpersteinen ohne Ordnung.
 - Anleitung: https://www.youtube.com/watch?v=TZ-4zqEvpgo
 
 
-### Plugins auf Webpages: (ungetestet) 
+## Plugins auf Webpages: (ungetestet) 
 - HowTo: https://www.youtube.com/watch?v=Q3S3BD1LnCY
 - Quelle für das "drumrum": https://github.com/Cycling74/rnbo.example.webpage
   - Webserver nötig, z. B. der in VisualStudioCode eingebaute oder ein lighttpd oder ein nginx...
