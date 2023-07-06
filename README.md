@@ -114,6 +114,7 @@ Achtung: Das hier ist bewusst eine lose Sammlung an Stolpersteinen ohne Ordnung.
 - Absolut schönstes Feature, direkt out of the box: 
 -- Web-Interface zum Einstellen der Parameter
 -- Auch am Handy bedienbar (QR-Code mit URL ist direkt dabei)
+-- Achtung, Fallstrick: Das Webinterface kriegt nur initial Daten vom Pi, sendet aber immer, wenn man etwas verstellt. Das hat die kuriose Auswirkung, dass man z. B. per MIDI oder OSC etwas auf dem Pi verstellen kann, im Webinterface sieht man es aber nicht. 
 - Grundlegendes Setup, falls noch nichts klappt: http://ip_address:5678/rnbo/inst/0
 - https://rnbo.cycling74.com/learn/configuring-audio-on-the-raspberry-pi - Veraltete Doku: Da sollte eigentlich ein entsprecheder Audio-Config-Button sein, der kommt aber nicht mehr (Stand Max 8.5.x). Abhilfe schafft:
 -- Das meiste ist jetzt direkt rechts beim Export einstellbar (Samplerate, Audiointerface, Vektorgröße)
@@ -126,7 +127,8 @@ Achtung: Das hier ist bewusst eine lose Sammlung an Stolpersteinen ohne Ordnung.
 - Fallstricke:
 -- Der Username muss "pi" bleiben! https://rnbo.cycling74.com/learn/working-with-the-raspberry-pi-target
 -- Debuggen: /usr/bin/rnbooscquery muss laufen
-- Wo liegen die Dateien eigentlich?
+- Wo liegen die Dateien eigentlich? In /home/pi/documents/rnbo. Den Ordner sollte man backuppen.
+-- Fun Fact: Das Kompilieren findet dann nativ auf dem RasPi statt, d. h. man sollte dafür sorgen, dass auf dem RasPi keine Last ist, wenn man schnell exporten will.
 
 #### Potis etc. einbauen
 - Das geht am einfachsten, indem man in Python ein Script schreibt, das die GPIOs ausliest und OSC-Nachrichten baut. 
