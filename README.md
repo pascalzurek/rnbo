@@ -13,17 +13,17 @@ https://docs.cycling74.com/max8/vignettes/rnbo_resources (Synth Building Blocks 
 
 ## Wann sollte man RNBO benutzen und wann nicht?
 - Ja:
--- Sachen als VST oder auf den RasPi oder auf eine Webpage exportieren (kann nur RNBO)
--- Samplegenaues Arbeiten (kann allerdings auch Gen)
--- Gen auf anderen Geräten benutzen (*alle* Gen-Befehle klappen in RNBO!)
--- Unumständliche Polyphony (t.b.c.)
--- Granularsynthese soll aus irgendwelchen Gründen besser sein (t.b.c.)
+  - Sachen als VST oder auf den RasPi oder auf eine Webpage exportieren (kann nur RNBO)
+  - Samplegenaues Arbeiten (kann allerdings auch Gen)
+  - Gen auf anderen Geräten benutzen (*alle* Gen-Befehle klappen in RNBO!)
+  - Unumständliche Polyphony (t.b.c.)
+  - Granularsynthese soll aus irgendwelchen Gründen besser sein (t.b.c.)
 - Nein:
--- Rapid Prototyping (denn die Kompiliererei braucht Zeit)
--- bpatcher gibt es nicht
--- Wenn ich Presets brauche; die gehen zwar, aber nur über Snapshots
--- während des Entwickelns eines großen Patches (Kompilierzeiten skalieren schlecht)
--- zum Ausprobieren von neuer, unbekannter Hardware (keine Debug-Ausgaben, d. h. schon die CC-Ausgabe eine MIDI-Controllers kann ich nicht sichtbar machen)
+  - Rapid Prototyping (denn die Kompiliererei braucht Zeit)
+  - bpatcher gibt es nicht
+  - Wenn ich Presets brauche; die gehen zwar, aber nur über Snapshots
+  - während des Entwickelns eines großen Patches (Kompilierzeiten skalieren schlecht)
+  - zum Ausprobieren von neuer, unbekannter Hardware (keine Debug-Ausgaben, d. h. schon die CC-Ausgabe eine MIDI-Controllers kann ich nicht sichtbar machen)
 
 
 ### Patch 0: "Fingerübung" Stereo Widener in MS  
