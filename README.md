@@ -5,9 +5,7 @@ https://rnbo.cycling74.com/
 https://docs.cycling74.com/max8/vignettes/rnbo_resources (Synth Building Blocks und RNBO Pedals)
   
 ## Installation  
-(genaueres: ToDo)  
-- Siehe Homepage  
-- Sinnvoll: Auch RNBO Guitar Pedals installieren  
+- RNBO und evtl. auch RNBO Guitar Pedals im Package Manager installieren. Das war's eigentlich.
 
 ## FFT in RNBO:
 - https://rnbo.cycling74.com/learn/using-the-fft
@@ -28,18 +26,8 @@ https://docs.cycling74.com/max8/vignettes/rnbo_resources (Synth Building Blocks 
 -- zum Ausprobieren von neuer, unbekannter Hardware (keine Debug-Ausgaben, d. h. schon die CC-Ausgabe eine MIDI-Controllers kann ich nicht sichtbar machen)
 
 
-
-  
-## Was teste ich?  
-- Raspberry Pi (welcher geht?)   
-- VST, auf allen Plattformen  
-- Speed?/Latenz?    
-- Web App?
-- Gen in dem Objekt?  
-- Latenz?  
-- (Irgendwas besonderes, wenn man daraus eine Max External baut?)  
-  
 ### Patch 0: "Fingerübung" Stereo Widener in MS  
+- siehe Verzeichnis
   
 ### Patch 1: MHV zu Doppel MS  
   
@@ -75,6 +63,7 @@ Achtung: Das hier ist bewusst eine lose Sammlung an Stolpersteinen ohne Ordnung.
 -- Wann RNBO eine Message (also nicht: ein Signal!) verarbeitet, ist ungewiss. Wenn man will, dass etwas pünktlich passiert, sollte man Signale draus machen:
 -- sig~ wandelt Zahlen in Signale um, damit kann ich wieder sample-akkurate Verarbeitung auch von Zahlenwerten nutzen. Achtung, das frisst natürlich Ressourcen.
 -- Weiteres: https://rnbo.cycling74.com/learn/intro-to-sample-accurate-patching
+- Immer wieder: Man muss sich WIRKLICH daran gewöhnen, dass alles länger braucht.
 
 ### Messages and Ports
 - https://rnbo.cycling74.com/learn/messages-and-ports
@@ -89,13 +78,13 @@ Achtung: Das hier ist bewusst eine lose Sammlung an Stolpersteinen ohne Ordnung.
 ### MIDI und OSC
 - midiin und ctlin sind die Blöcke, die wir brauchen.
 -- ACHTUNG. Wenn man im Max-Patcher draußen herum kein midiin hat, funktioniert beim Prototyping das midiin im RNBO-Subpatcher auch nicht.
+-- Dem midiin im Hauptpatcher gibt man von midiinfo (message: Controller) das richtige control device.
+-- Magisch erscheint dann im rnbo~ objekt ein zweites inlet für MIDI. Sonst nicht!
 
-
-max-patch zur Kontrolle bauen statt Webinterface: 
-
-Steuerung per OSC: Messages bauen
-http://192.168.178.229:5678/rnbo/inst/0/
-udpsend ipaddr 1234
+- Um z. B. einen RasPi zu steueren, ohne das Web-Interface zu benutzen, ist die einfachste Lösung, dass man einen Max-Patch zur Kontrolle baut mit OSC-Buttons: 
+-- Alle Parameter findet man über http://adresse_des_raspi:5678/rnbo/inst/0/ heraus
+-- Dann baut man entsprechende Messages in Max
+-- ...und sendet sie via "udpsend ipaddr 1234" an die OSC-Adresse. Das war's schon.
 
 
 ### FAQ
@@ -108,12 +97,10 @@ udpsend ipaddr 1234
 
 
 ### UI/JUCE
-
-https://github.com/Cycling74/rnbo.example.juce
-
-https://github.com/Cycling74/rnbo.example.juce/blob/main/CUSTOM_UI.md
-
-Fazit: Viel Voraussetzungen, um das bauen zu können. ProJucer kann man sich sicherlich dennoch mal anschauen.
+- Die UI für ein VST-Plugin muss man mit JUCE bauen. Das ist nicht ganz trivial. Infos hier:
+-- https://github.com/Cycling74/rnbo.example.juce
+-- https://github.com/Cycling74/rnbo.example.juce/blob/main/CUSTOM_UI.md
+-- Fazit: Viel Voraussetzungen, um das bauen zu können. ProJucer kann man sich sicherlich dennoch mal anschauen.
 
 
 ### RasPi
