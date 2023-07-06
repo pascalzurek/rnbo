@@ -103,23 +103,24 @@ Achtung: Das hier ist bewusst eine lose Sammlung an Stolpersteinen ohne Ordnung.
 
 ### RasPi
 - Geht laut Cycling nur auf RasPi 3 und 4  
-- Audio-Interface benötigt, z. B. das übliche Billo-Behringer oder ein USB-Mikro, das class compatible ist. (Das interne Audio-Interface ist als Standard disabled.)
+- Audio-Interface benötigt, z. B. das übliche Billo-Behringer UCA oder ein USB-Mikro, das class compatible ist. (Das interne Audio-Interface ist als Standard disabled.)
 - Guter Überblick und Startpunkt: https://rnbo.cycling74.com/learn/raspberry-pi-target-overview
 - Bester Anfang: Raspberry Pi Imager downloaden (ToDo: Link) und RNBO-Image drauf ziehen
   - Mustergültiges Lernvideo: https://www.youtube.com/watch?v=oYBGYqhbRR4&
 - Image: https://rnbo.cycling74.com/resources#raspberry-pi-images
+- Achtung bei kleinen Bildschirmen: Der Export-Button ist ganz unten ganz rechts!
 - Absolut schönstes Feature, direkt out of the box: 
   - Web-Interface zum Einstellen der Parameter
   - Auch am Handy bedienbar (QR-Code mit URL ist direkt dabei)
   - Achtung, Fallstrick: Das Webinterface kriegt nur initial Daten vom Pi, sendet aber immer, wenn man etwas verstellt. Das hat die kuriose Auswirkung, dass man z. B. per MIDI oder OSC etwas auf dem Pi verstellen kann, im Webinterface sieht man es aber nicht. 
-- Grundlegendes Setup, falls noch nichts klappt: http://ip_address:5678/rnbo/inst/0
+- Grundlegendes Setup, falls noch nichts klappt: http://ip_address:5678/rnbo/inst/0 - dort sind die OSC-Endpoints, mit denen man alles einstellen kann. Siehe unten.
 - https://rnbo.cycling74.com/learn/configuring-audio-on-the-raspberry-pi - Veraltete Doku: Da sollte eigentlich ein entsprecheder Audio-Config-Button sein, der kommt aber nicht mehr (Stand Max 8.5.x). Abhilfe schafft:
   - Das meiste ist jetzt direkt rechts beim Export einstellbar (Samplerate, Audiointerface, Vektorgröße)
   - Das nicht verlinkte Script rpi-configure-audio hilft auch sehr. Liegt bei Windows in "C:\Program Files\Cycling '74\Max 8\resources\packages\RNBO\examples\Utilities\rpi-configure-audio\patchers\rpi-configure-audio.maxpat"
 
   - Abhilfe schafft außerdem: https://rnbo.cycling74.com/learn/configuring-audio-on-the-raspberry-pi#using-the-osc-interface 
   - Man kann z. B. via OSC alles einstellen; https://github.com/yoggy/sendosc machts möglich (sendosc c74rpi.local 5678 /rnbo/jack/config/card s hw:0)
-- "The RNBO Runner exposes an OSC-based interface to JACK, which you can use to select your active soundcard, choose a sample rate, and restart JACK. You can use this OSC interface directly, but it's often easier to use the special audio configuration Max patch included with the RNBO package."
+  - "The RNBO Runner exposes an OSC-based interface to JACK, which you can use to select your active soundcard, choose a sample rate, and restart JACK. You can use this OSC interface directly, but it's often easier to use the special audio configuration Max patch included with the RNBO package."
 
 - Fallstricke:
   - Der Username muss "pi" bleiben! https://rnbo.cycling74.com/learn/working-with-the-raspberry-pi-target
