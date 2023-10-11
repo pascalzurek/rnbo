@@ -1,1 +1,1 @@
-
+Der Patch nimmt nur das (Mono-)Eingangssignal entgegen, spielt es unverzögert links und um delay_smp verzögert rechts ab. Man kann einerseits den Max-Patch laden und ihn als Blaupause für ein simpelstmögliches RNBO-Patch nehmen, andererseits das VST-Plugin direkt in eine DAW importieren und auf einer Spur ausprobieren. 
